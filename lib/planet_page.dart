@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ar/animated_planet.dart';
 import 'package:flutter_ar/model/planets_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -21,15 +22,14 @@ class PlanetPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image.asset(
-                  planet.imagePath,
+                AnimatedPlanet(
+                  imagePath: planet.imagePath,
                   width: planet.width,
-                  fit: BoxFit.contain,
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   planet.name.toUpperCase(),
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 42,
                       color: Colors.white,
                       fontFamily: 'gothic',
@@ -38,13 +38,13 @@ class PlanetPage extends StatelessWidget {
                 ),
                 Text(
                   planet.subtitle,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 24,
                       color: Colors.white,
                       fontFamily: 'zen',
                       fontWeight: FontWeight.w500),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
               ],
             ),
           ),
@@ -54,23 +54,23 @@ class PlanetPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 planetFacts("assets/icons/distance.svg", planet.distance),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 planetFacts("assets/icons/diameter.svg", planet.diameter),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 planetFacts("assets/icons/orbit.svg", planet.moons),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 planetFacts("assets/icons/cloud.svg", planet.atmosphere),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
                 planetFacts("assets/icons/thermometer.svg", planet.temperature),
-                SizedBox(height: 12),
+                const SizedBox(height: 12),
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           ElevatedButton(
             onPressed: () {},
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
               child: Text(
                 "Learn More",
                 style: TextStyle(fontSize: 20, fontFamily: 'space'),
@@ -79,7 +79,7 @@ class PlanetPage extends StatelessWidget {
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.black, foregroundColor: Colors.white),
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
         ],
       ),
     );
@@ -90,10 +90,10 @@ class PlanetPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SvgPicture.asset(svgPath, height: 35, width: 35),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
               fontSize: 20, fontFamily: 'kanit', fontWeight: FontWeight.bold),
           overflow: TextOverflow.ellipsis,
           maxLines: 2,

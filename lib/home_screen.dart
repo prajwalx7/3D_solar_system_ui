@@ -20,10 +20,10 @@ class HomeScreen extends StatelessWidget {
             enableLoop: true,
             waveType: WaveType.liquidReveal,
             enableSideReveal: true,
-            slideIconWidget: Icon(Icons.arrow_back_ios),
+            slideIconWidget: const Icon(Icons.arrow_back_ios),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 50),
             child: Icon(
               Icons.menu_rounded,
               color: Colors.black,

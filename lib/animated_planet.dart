@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class AnimatedPlanet extends StatefulWidget {
   final String imagePath;
@@ -32,18 +33,24 @@ class AnimatedPlanetState extends State<AnimatedPlanet>
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _animation,
-      builder: (context, child) {
-        return Transform.translate(
-          offset: Offset(0, _animation.value),
-          child: Image.asset(
-            widget.imagePath,
-            width: widget.width,
-            fit: BoxFit.contain,
-          ),
-        );
-      },
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Lottie.asset('assets/animations/stars.json'),
+        AnimatedBuilder(
+          animation: _animation,
+          builder: (context, child) {
+            return Transform.translate(
+              offset: Offset(0, _animation.value),
+              child: Image.asset(
+                widget.imagePath,
+                width: widget.width,
+                fit: BoxFit.contain,
+              ),
+            );
+          },
+        ),
+      ],
     );
   }
 

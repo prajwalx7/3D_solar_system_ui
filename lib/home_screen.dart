@@ -22,14 +22,7 @@ class HomeScreen extends StatelessWidget {
             enableSideReveal: true,
             slideIconWidget: const Icon(Icons.arrow_back_ios),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 50),
-            child: Icon(
-              Icons.menu_rounded,
-              color: Colors.black,
-              size: 24,
-            ),
-          ),
+        
         ],
       ),
     );

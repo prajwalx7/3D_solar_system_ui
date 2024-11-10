@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_ar/model/planets_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
@@ -17,13 +18,12 @@ class DetailsPage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              // Use flexible height or remove fixed height
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: planet.gradient,
               ),
               child: Padding(
-                padding: const EdgeInsets.only(top: 70.0),
+                padding: EdgeInsets.only(top: 70.0.h),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -32,8 +32,8 @@ class DetailsPage extends StatelessWidget {
                         Lottie.asset('assets/animations/stars.json'),
                         Center(
                           child: SizedBox(
-                            height: 200,
-                            width: 200,
+                            height: 200.h,
+                            width: 200.w,
                             child: ModelViewer(
                               src: planet.model,
                               ar: true,
@@ -46,9 +46,9 @@ class DetailsPage extends StatelessWidget {
                     ),
                     Text(
                       planet.name.toUpperCase(),
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: 'gothic',
-                        fontSize: 36,
+                        fontSize: 36.sp,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                         letterSpacing: 3.0,
@@ -56,14 +56,16 @@ class DetailsPage extends StatelessWidget {
                     ),
                     Text(
                       planet.subtitle,
-                      style: const TextStyle(
-                          fontSize: 24, color: Colors.white, fontFamily: 'zen'),
+                      style: TextStyle(
+                          fontSize: 24.sp,
+                          color: Colors.white,
+                          fontFamily: 'zen'),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20.h),
                     SizedBox(
-                      height: 250,
+                      height: 250.h,
                       child: GridView.builder(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0.r),
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
@@ -98,52 +100,54 @@ class DetailsPage extends StatelessWidget {
                         physics: const NeverScrollableScrollPhysics(),
                       ),
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: 5.h),
                     Padding(
-                      padding: const EdgeInsets.only(left: 16.0),
+                      padding: EdgeInsets.only(left: 16.0.w),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
                           "Description",
                           style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 24.sp,
                               color: Colors.white70,
                               fontWeight: FontWeight.bold,
                               fontFamily: 'kanit'),
                         ),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: 15.h),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.symmetric(horizontal: 16.0.w),
                       child: Text(
                         planet.description ?? "N/A",
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             color: Colors.white70,
                             fontFamily: 'space'),
                         textAlign: TextAlign.justify,
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                     GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
                       },
                       child: Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 20.w, vertical: 12.h),
                         decoration: BoxDecoration(
                             color: Colors.white70,
-                            borderRadius: BorderRadius.circular(32)),
+                            borderRadius: BorderRadius.circular(32.r)),
                         child: Text(
                           "Back to Planet",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontFamily: 'kanit'),
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'kanit'),
                         ),
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: 30.h),
                   ],
                 ),
               ),
@@ -159,7 +163,7 @@ Widget buildFacts(String svgPath, String value, String title) {
   return Container(
     decoration: BoxDecoration(
       color: Colors.white.withOpacity(0.2),
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: BorderRadius.circular(8.r),
       border: Border.all(color: Colors.white.withOpacity(0.3)),
     ),
     child: ClipRRect(
@@ -171,19 +175,20 @@ Widget buildFacts(String svgPath, String value, String title) {
           children: [
             SvgPicture.asset(
               svgPath,
-              height: 25,
-              width: 25,
+              height: 25.h,
+              width: 25.w,
             ),
-            const SizedBox(height: 4),
+            SizedBox(height: 4.h),
             Text(
               value,
-              style: const TextStyle(color: Colors.white, fontFamily: 'kanit'),
+              style: TextStyle(
+                  fontSize: 16.sp, color: Colors.white, fontFamily: 'kanit'),
             ),
-            SizedBox(height: 3),
+            SizedBox(height: 3.h),
             Text(
               title,
               style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.white70,
                   fontFamily: 'space'),

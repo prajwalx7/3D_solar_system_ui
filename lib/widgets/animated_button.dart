@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ar/model/planets_model.dart';
 import 'package:flutter_ar/pages/details_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 
 class AnimatedButton extends StatefulWidget {
@@ -49,15 +50,15 @@ class _AnimatedButtonState extends State<AnimatedButton> {
                 elevation: 0,
                 backgroundColor: Colors.white70,
                 foregroundColor: Colors.black,
-                fixedSize: const Size(180, 50),
+                fixedSize: Size(180.w, 50.h),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(42),
+                  borderRadius: BorderRadius.circular(42.r),
                 ),
               ),
-              child: const Text(
+              child: Text(
                 "Learn More",
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontFamily: 'kanit',
                     fontWeight: FontWeight.bold),
               ),
@@ -67,8 +68,8 @@ class _AnimatedButtonState extends State<AnimatedButton> {
               alignment: Alignment.bottomCenter,
               child: Lottie.asset(
                 'assets/animations/rocket.json',
-                height: 100,
-                width: 150,
+                height: 100.h,
+                width: 150.w,
               ),
             ),
         ],

@@ -88,19 +88,20 @@ class PlanetPage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        planetFacts(
-                            "assets/icons/distance.svg", planet.distance),
+                        planetFacts("assets/icons/distance.svg",
+                            planet.distance, "Distance from Sun"),
+                        const SizedBox(height: 8),
+                        planetFacts("assets/icons/diameter.svg",
+                            planet.diameter, "Diameter"),
                         const SizedBox(height: 8),
                         planetFacts(
-                            "assets/icons/diameter.svg", planet.diameter),
+                            "assets/icons/orbit.svg", planet.moons, "Moons"),
                         const SizedBox(height: 8),
-                        planetFacts("assets/icons/orbit.svg", planet.moons),
+                        planetFacts("assets/icons/cloud.svg", planet.atmosphere,
+                            "Atmosphere"),
                         const SizedBox(height: 8),
-                        planetFacts(
-                            "assets/icons/cloud.svg", planet.atmosphere),
-                        const SizedBox(height: 8),
-                        planetFacts(
-                            "assets/icons/thermometer.svg", planet.temperature),
+                        planetFacts("assets/icons/thermometer.svg",
+                            planet.temperature, "Temperature"),
                         const SizedBox(height: 8),
                       ],
                     ),
@@ -114,18 +115,7 @@ class PlanetPage extends StatelessWidget {
             left: 0,
             right: 0,
             child: AnimatedButton(
-              planet: PlanetsModel(
-                name: planet.name,
-                subtitle: planet.subtitle,
-                imagePath: planet.imagePath,
-                gradient: planet.gradient,
-                width: planet.width,
-                distance: planet.distance,
-                diameter: planet.diameter,
-                moons: planet.moons,
-                atmosphere: planet.atmosphere,
-                temperature: planet.temperature,
-              ),
+              planet: planet,
             ),
           ),
         ],
@@ -133,21 +123,34 @@ class PlanetPage extends StatelessWidget {
     );
   }
 
-  Widget planetFacts(String svgPath, String text) {
+  Widget planetFacts(String svgPath, String value, String title) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SvgPicture.asset(svgPath, height: 35, width: 35),
         const SizedBox(width: 12),
-        Text(
-          text,
-          style: const TextStyle(
-              fontSize: 20,
-              fontFamily: 'kanit',
-              fontWeight: FontWeight.bold,
-              color: Colors.white70),
-          overflow: TextOverflow.ellipsis,
-          maxLines: 2,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              value,
+              style: const TextStyle(
+                  fontSize: 20,
+                  fontFamily: 'kanit',
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.white,
+                fontFamily: 'kanit',
+              ),
+            ),
+          ],
         ),
       ],
     );

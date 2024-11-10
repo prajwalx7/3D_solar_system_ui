@@ -46,16 +46,20 @@ class _AnimatedButtonState extends State<AnimatedButton> {
             ElevatedButton(
               onPressed: showAnimationAndModal,
               style: ElevatedButton.styleFrom(
+                elevation: 0,
                 backgroundColor: Colors.white70,
                 foregroundColor: Colors.black,
-                fixedSize: const Size(200, 50),
+                fixedSize: const Size(180, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(42),
                 ),
               ),
               child: const Text(
                 "Learn More",
-                style: TextStyle(fontSize: 20, fontFamily: 'space'),
+                style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'kanit',
+                    fontWeight: FontWeight.bold),
               ),
             ),
           if (isVisible)
@@ -64,7 +68,7 @@ class _AnimatedButtonState extends State<AnimatedButton> {
               child: Lottie.asset(
                 'assets/animations/rocket.json',
                 height: 100,
-                width: 100,
+                width: 150,
               ),
             ),
         ],

@@ -9,10 +9,18 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff1b1b1b),
       body: SafeArea(
         child: Stack(
           children: [
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.white70, Colors.black.withOpacity(0.5)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 60.h),
               child: Column(
@@ -20,26 +28,29 @@ class StartPage extends StatelessWidget {
                   Text(
                     "Our Solar System",
                     style: TextStyle(
-                        fontSize: 40.sp,
-                        color: Colors.white,
-                        fontFamily: 'space',
-                        fontWeight: FontWeight.bold),
+                      fontSize: 40.sp,
+                      color: Colors.black,
+                      fontFamily: 'space',
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   SizedBox(height: 20.h),
                   Text(
                     "Your Planetary Guide",
                     style: TextStyle(
-                        fontSize: 24.sp,
-                        color: Colors.white70,
-                        fontFamily: 'space'),
+                      fontSize: 24.sp,
+                      color: Colors.black,
+                      fontFamily: 'space',
+                    ),
                   ),
                   SizedBox(height: 20.h),
                   Text(
                     "Discover amazing facts and features of all planets in our solar system",
                     style: TextStyle(
-                        fontSize: 18.sp,
-                        color: Colors.white70,
-                        fontFamily: 'space'),
+                      fontSize: 18.sp,
+                      color: Colors.black,
+                      fontFamily: 'space',
+                    ),
                     textAlign: TextAlign.center,
                   ),
                   SizedBox(height: 80.h),
@@ -53,7 +64,6 @@ class StartPage extends StatelessWidget {
                       );
                     },
                     child: Container(
-                      padding: EdgeInsets.all(18.r),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           colors: [Colors.deepPurple, Colors.purple.shade700],
@@ -61,7 +71,9 @@ class StartPage extends StatelessWidget {
                           end: Alignment.bottomRight,
                         ),
                         border: Border.all(
-                            color: Colors.white.withOpacity(0.4), width: 0.4),
+                          color: Colors.white.withOpacity(0.4),
+                          width: 0.4,
+                        ),
                         borderRadius: BorderRadius.circular(12.r),
                         boxShadow: [
                           BoxShadow(
@@ -71,20 +83,23 @@ class StartPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: Text(
-                        "Start Exploring",
-                        style: TextStyle(
-                          fontSize: 22.sp,
-                          color: Colors.white,
-                          fontFamily: 'zen',
-                          fontWeight: FontWeight.bold,
-                          shadows: [
-                            Shadow(
-                              color: Colors.black.withOpacity(0.5),
-                              blurRadius: 4.r,
-                              offset: Offset(2.r, 2.r),
-                            ),
-                          ],
+                      child: Padding(
+                        padding: EdgeInsets.all(12.0.r),
+                        child: Text(
+                          "Start Exploring",
+                          style: TextStyle(
+                            fontSize: 22.sp,
+                            color: Colors.white,
+                            fontFamily: 'zen',
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                color: Colors.black.withOpacity(0.5),
+                                blurRadius: 4.r,
+                                offset: Offset(2.r, 2.r),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

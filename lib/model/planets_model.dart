@@ -56,7 +56,7 @@ final List<PlanetsModel> planets = [
       description:
           "Earth is the third planet from the Sun and the only known planet to support life. It has a diverse environment, with vast oceans, continents, and an atmosphere that sustains a rich variety of flora and fauna. Earth's atmosphere is primarily composed of nitrogen and oxygen, which helps regulate temperature and protect life from harmful solar radiation. Known for its blue appearance from space due to water coverage, Earth has a moderate climate and an active geological surface with tectonic activity and a strong magnetic field."),
   PlanetsModel(
-      model: "assets/models/earth.glb",
+      model: "assets/models/venus.glb",
       name: "Venus",
       subtitle: "The Evening Star",
       imagePath: "assets/images/venus.png",
@@ -210,7 +210,7 @@ final List<PlanetsModel> planets = [
       description:
           "Neptune, the eighth and farthest planet from the Sun, is an ice giant with powerful winds and storms, including the dark, spinning storm known as the Great Dark Spot. Its deep blue color is due to the presence of methane in the atmosphere. Neptune has faint rings and 14 known moons, the largest being Triton."),
   PlanetsModel(
-      model: "assets/models/earth.glb",
+      model: "assets/models/pluto.glb",
       name: "Pluto",
       subtitle: "The Dwarf Planet",
       imagePath: "assets/images/pluto.png",
